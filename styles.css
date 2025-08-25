@@ -1,0 +1,143 @@
+/* style.css */
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background: #333;
+  list-style: none;
+  padding: 0.75rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Grid Layout */
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.content h2 {
+  margin-bottom: 1rem;
+}
+
+/* Flexbox for product cards */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.product-card {
+  flex: 1 1 calc(50% - 1.5rem);
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.product-card button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background: #45a049;
+}
+
+/* Sidebar */
+.sidebar h2 {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 0.5rem 0;
+}
+
+.sidebar ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablets */
+@media (max-width: 992px) {
+  main {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .product-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    order: -1; /* Sidebar goes above content */
+  }
+}
